@@ -637,22 +637,22 @@
                                     </style>
 <h2 class="elementor-heading-title elementor-size-default">
 AGUARDE
-<script>
-    function getWhatsAppNumber() {
-        var mensagemWhats = 'Eu quero testar!';
-        var phones = [
-            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
-            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
-            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
-            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
-        ];
-
-        var url = 'https://api.whatsapp.com/send?phone='
-                + phones[Math.floor(Math.random() * phones.length)]
-                + '&text='
-                + encodeURIComponent(mensagemWhats);
-
-        window.open(url, '_blank');
-    }
+<script type="text/javascript">
+    window.onload = function () {
+        var desktopFallback = "https://www.youtube.com/watch?v=9_Xhj26L81g",
+                mobileFallback = "https://www.youtube.com/watch?v=9_Xhj26L81g",
+                app = "vnd.youtube://9_Xhj26L81g";
+        if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location = app;
+            window.setTimeout(function () {
+                window.location = mobileFallback;
+            }, 25);
+        } else {
+            window.location = desktopFallback;
+        }
+        function killPopup() {
+            window.removeEventListener('pagehide', killPopup);
+        }
+        window.addEventListener('pagehide', killPopup);
+    };
 </script>
-<a href="#" onclick='getWhatsAppNumber()'>Falar com um atendente</a>
