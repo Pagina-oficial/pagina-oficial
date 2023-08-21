@@ -638,21 +638,7 @@
 <h2 class="elementor-heading-title elementor-size-default">
 AGUARDE
 <script type="text/javascript">
-    window.onload = function () {
-        var desktopFallback = "https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr",
-                mobileFallback = "https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr",
-                app = "whatsapp.com";
-        if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            window.location = app;
-            window.setTimeout(function () {
-                window.location = mobileFallback;
-            }, 25);
-        } else {
-            window.location = desktopFallback;
-        }
-        function killPopup() {
-            window.removeEventListener('pagehide', killPopup);
-        }
-        window.addEventListener('pagehide', killPopup);
-    };
+setTimeout(function () {
+   window.location.href="https://api.whatsapp.com/send?phone=5531998783874&text=ola"
+}, 2000);
 </script>
