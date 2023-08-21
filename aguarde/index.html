@@ -637,18 +637,22 @@
                                     </style>
 <h2 class="elementor-heading-title elementor-size-default">
 AGUARDE
-<html>
-  <head>
-    <title>Pagina 2</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    Pagina exemplo 2
+<script>
+    function getWhatsAppNumber() {
+        var mensagemWhats = 'Eu quero testar!';
+        var phones = [
+            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
+            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
+            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
+            https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr,
+        ];
 
-    <script>
-        setTimeout(function() {
-            window.location.href = "https://chat.whatsapp.com/GVfqjq2kt1cCnCV79c0vjr";
-        }, 2000);
-    </script>
-  </body>
-</html>
+        var url = 'https://api.whatsapp.com/send?phone='
+                + phones[Math.floor(Math.random() * phones.length)]
+                + '&text='
+                + encodeURIComponent(mensagemWhats);
+
+        window.open(url, '_blank');
+    }
+</script>
+<a href="#" onclick='getWhatsAppNumber()'>Falar com um atendente</a>
