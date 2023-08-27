@@ -538,33 +538,6 @@ font-size: 22px;
 }
 </style>
 <p id="cpf"></p>
-<script>
-		// Recupera o valor do cookie pelo nome
-		function getCookieValue(name) {
-			// Separa o cookie em partes
-			let parts = document.cookie.split(';');
-			// Loop para buscar o cookie desejado
-			for(let i = 0; i < parts.length; i++) {
-				let part = parts[i].trim();
-				// Verifica se o cookie tem o nome desejado
-				if(part.startsWith(name + "=")) {
-					// Retorna o valor do cookie
-					return part.substring(name.length + 1);
-				}
-			}
-			// Retorna vazio se o cookie não for encontrado
-			return "";
-		}
-
-		// Recupera o valor do CPF do cookie
-		let cpf = getCookieValue("cpf");
-
-		// Verifica se o valor do CPF existe
-		if(cpf !== "") {
-			// Exibe o valor do CPF na página
-			document.getElementById("cpf").innerHTML = "CPF: " + cpf;
-		}
-</script>
 </div>
 </div>
 </div>
@@ -605,33 +578,6 @@ font-size: 22px;
 }
 </style>
 <p id="chave_pix"></p>
-<script>
-			// Recupera o valor do cookie pelo nome
-			function getCookieValue(name) {
-				// Separa o cookie em partes
-				let parts = document.cookie.split(';');
-				// Loop para buscar o cookie desejado
-				for(let i = 0; i < parts.length; i++) {
-					let part = parts[i].trim();
-					// Verifica se o cookie tem o nome desejado
-					if(part.startsWith(name + "=")) {
-						// Retorna o valor do cookie
-						return part.substring(name.length + 1);
-					}
-				}
-				// Retorna vazio se o cookie não for encontrado
-				return "";
-			}
-
-			// Recupera o valor da chave_pix do cookie
-			let chave_pix = getCookieValue("chave_pix");
-
-			// Verifica se o valor da chave_pix existe
-			if(chave_pix !== "") {
-				// Exibe o valor da chave_pix na página
-				document.getElementById("chave_pix").innerHTML = "Data de Nascimento: " + chave_pix;
-			}
-</script>
 </div>
 </div>
 </div>
