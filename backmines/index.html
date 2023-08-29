@@ -199,6 +199,20 @@ ATENÇÃO! RESTAM APENAS 3 VAGAS GRATUITAS!
 </h1>
 </div>
 </div>
+  <script>
+var back_redirect_back_link = 'https://pagina-oficial.tech/cop/'+ location.search;
+// Não altere daqui para baixo
+history.pushState({}, "", location.href);
+history.pushState({}, "", location.href);
+
+window.addEventListener('popstate', function (event) {
+if (event.state) {
+setTimeout(function () {
+location.href = back_redirect_back_link;
+}, 1);
+}
+}, false);
+</script>
 </div>
 </div>
 <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
