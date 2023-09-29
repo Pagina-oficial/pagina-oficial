@@ -235,6 +235,18 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			width: auto;
 			z-index: 100000;
 		}
+			
+<script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+    }
+</script>
         <link rel="preload" href="https://scripts.converteai.net/6dd66569-8d56-4761-ad61-20c59d992afa/players/651703572138c20008f01980/player.js" as="script">
 <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
 <link rel="preload" href="https://images.converteai.net/6dd66569-8d56-4761-ad61-20c59d992afa/players/651703572138c20008f01980/thumbnail.jpg" as="image">
