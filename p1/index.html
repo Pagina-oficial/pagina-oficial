@@ -64,7 +64,7 @@
     function closePopupB2(){document.getElementById('popupB2').style.display='none'}
     function showLoadingB2(){var button=document.getElementById("B2");aumentarValor();showPopupB2();setTimeout(function(){closePopupB2();mostrarPagina('p3')},4000)}
     function showPopupB3(){document.getElementById('popupB3').style.display='block'}
-    function redirectToVsl(){var params=window.location.search.toString();window.location.href="https://pagina-oficial.tech/p2"+params}
+    function redirectToVsl(){var params=window.location.search.toString();window.location.href="https://pagina-oficial.tech/Bora"+params}
     function showLoadingB3(){var button=document.getElementById("B3");aumentarValor();showPopupB3();setTimeout(function(){redirectToVsl()},4000)}
     document.getElementById("gerarCodigo").addEventListener("click",function(){const codigoAleatorio=generateRandomCode(7);document.getElementById("codigoAleatorio").textContent=codigoAleatorio;document.getElementById("codigoGerado").style.display="block"});function generateRandomCode(length){const characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";let codigo="";for(let i=0;i<length;i++){const randomIndex=Math.floor(Math.random()*characters.length);codigo+=characters.charAt(randomIndex)}
     return codigo}
