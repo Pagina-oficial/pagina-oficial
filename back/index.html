@@ -155,3 +155,14 @@ flexibility(document.documentElement);</script>
 				</div>
 				<div class="elementor-element elementor-element-75bf449a elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-html" data-id="75bf449a" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
+					<script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+    }
+</script>
