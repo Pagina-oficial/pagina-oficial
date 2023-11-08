@@ -56,6 +56,18 @@ flexibility(document.documentElement);</script>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path></svg>			</div>
 		</div>
 				</div>
+									
+<script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+    }
+</script>
 				</div>
 					</div>
 		</div>
