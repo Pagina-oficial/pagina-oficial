@@ -549,15 +549,12 @@ Termos de Uso
 <p style="margin-top:24px;">
 </p>
 <script>
-    window.onload = function () {
-        var links = document.getElementsByTagName("a");
-        for (var i = 0, n = links.length; i < n; i++) {
-            var href = links[i].href.trim() +
-                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
-                    document.location.search.replace('?', '').toString();
-            links[i].href = href;
-        }
-    }
+buttons = document.getElementsByClassName('typeform-button')
+const queryString = window.location.search;
+buttons.forEach(button => button.setAttribute('href', button.getAttribute('href') + queryString))
+typeform_buttons = document.getElementsByClassName('typeform-share')
+newQueryString = queryString.replaceAll('?', '&')
+typeform_buttons.forEach(button => button.setAttribute('href', button.getAttribute('href') + newQueryString))
 </script>
 <link rel="preload" href="https://scripts.converteai.net/74df1478-b0d7-454f-aece-bd20986829ce/players/6541271f1718ed000986ac23/player.js" as="script">
 <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
