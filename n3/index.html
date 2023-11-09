@@ -10,17 +10,6 @@
 <meta property="og:description" content="Descrição">
 <meta property="og:image" content="https://img.imageboss.me/atm/cdn/format:auto/u/TLMry1wp6WMRo3v480WAL9jH87D3/l/JJjpBd2688687.jpeg">
 <meta charset="utf-8">
-<script>
-    window.onload = function () {
-        var links = document.getElementsByTagName("a");
-        for (var i = 0, n = links.length; i < n; i++) {
-            var href = links[i].href.trim() +
-                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
-                    document.location.search.replace('?', '').toString();
-            links[i].href = href;
-        }
-    }
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <title>Avaliador de marcas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -564,3 +553,14 @@ typeform_buttons.forEach(button => button.setAttribute('href', button.getAttribu
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://api.vturb.com.br">
+<script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+    }
+</script>
