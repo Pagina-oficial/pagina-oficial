@@ -545,6 +545,27 @@ typeform_buttons = document.getElementsByClassName('typeform-share')
 newQueryString = queryString.replaceAll('?', '&')
 typeform_buttons.forEach(button => button.setAttribute('href', button.getAttribute('href') + newQueryString))
 </script>
+    	<script>
+   let prefix = ["https://checkout.perfectpay.com.br"];
+
+function getParams() {
+    let t = "",
+        e = window.top.location.href,
+        r = new URL(e);
+    if (null != r) {
+        let a = r.searchParams.get("utm_source"),
+            n = r.searchParams.get("utm_medium"),
+            o = r.searchParams.get("utm_campaign"),
+            m = r.searchParams.get("utm_term"),
+            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+    }
+    return t
+}! function() {
+    var t = new URLSearchParams(window.location.search);
+    t.toString() && document.querySelectorAll("a").forEach(function(e) {
+        for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+    })
+}(); </script>
 <link rel="preload" href="https://scripts.converteai.net/74df1478-b0d7-454f-aece-bd20986829ce/players/6541271f1718ed000986ac23/player.js" as="script">
 <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
 <link rel="preload" href="https://images.converteai.net/74df1478-b0d7-454f-aece-bd20986829ce/players/6541271f1718ed000986ac23/thumbnail.jpg" as="image">
@@ -553,14 +574,4 @@ typeform_buttons.forEach(button => button.setAttribute('href', button.getAttribu
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://api.vturb.com.br">
-<script>
-    window.onload = function () {
-        var links = document.getElementsByTagName("a");
-        for (var i = 0, n = links.length; i < n; i++) {
-            var href = links[i].href.trim() +
-                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
-                    document.location.search.replace('?', '').toString();
-            links[i].href = href;
-        }
-    }
-</script>
+
